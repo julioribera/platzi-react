@@ -1,11 +1,7 @@
-import React from 'react';
-import './App.css';
-import { Column1 } from './Column1';
-import { Column2 } from './Column2';
-
-
-
-
+import React from "react";
+import "./App.css";
+import {Column1} from "./col1/Column1";
+import {Column2} from "./col2/Column2";
 
 function App() {
   return (
@@ -15,8 +11,5 @@ function App() {
     </div>
   );
 }
-
-
-
 
 export default App;
