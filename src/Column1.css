@@ -1,0 +1,43 @@
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 20px;
+    outline: none;
+}
+
+.input-container input {
+    padding-right: 50px;
+}
+
+.input-container button {
+    position: absolute;
+    right: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+    color: #ccc;
+    outline: none;
+}
+
+input:focus, .input-container button:focus {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+input:focus + button {
+    color: #007bff;
+}

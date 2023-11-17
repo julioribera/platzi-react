@@ -1,0 +1,78 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, rgb(222, 228, 255), rgb(255, 254, 233), rgb(206, 252, 233));
+    background-size: 200% 200%;
+    animation: moveGradient 10s ease infinite;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    height: 100vh;
+    max-height: 800px;
+    margin: 0 auto;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+.column {
+    flex: 1;
+    padding: 3% 6%;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.column:first-child {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 35px rgba(4, 17, 71, 0.15);   
+    background-image: url('./img/TodoApp.png');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: center calc(100% - 10px);
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .column:first-child {
+        background-image: none;
+    }
+}
+
+
+
+
+
+

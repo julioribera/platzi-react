@@ -1,0 +1,25 @@
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc; /* Borde para la tarjeta */
+    padding: 10px;
+    margin-bottom: 10px; /* Espacio entre tarjetas */
+    border-radius: 5px; /* Bordes redondeados para el estilo de tarjeta */
+    list-style-type: none;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+li p {
+    flex-grow: 1;
+    margin: 0 10px; /* Espacio alrededor del texto */
+}
+
+li > :first-child {
+    /* Estilos para el componente Check (si es necesario) */
+}
+
+.cross-container {
+    align-self: flex-start;
+    margin-left: auto; /* Empuja la cruz a la derecha */
+}
