@@ -51,7 +51,7 @@ h4 {
 }
 
 .column:first-child {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0px 0px 35px rgba(4, 17, 71, 0.15);   
     background-image: url('./img/TodoApp.png');
     background-repeat: no-repeat;
