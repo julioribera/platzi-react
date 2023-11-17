@@ -7,7 +7,7 @@ const defaultTodos = [
     { text: 'Cortar cebolla', completed: true },
     { text: 'Tomar el curso de intro a React', completed: false },
     { text: 'Llorar con la llorona', completed: false },
-    { text: 'LALALALA', completed: false },
+    { text: 'LALALALA', completed: true },
     { text: 'Hacer la cena', completed: false }
   ];
 

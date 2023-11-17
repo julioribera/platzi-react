@@ -4,7 +4,7 @@ import { Cross } from './Cross';
 
 function TodoItem({text, completed}){
     return (
-      <li>
+      <li className={completed ? 'completed' : ''}>
         <Check/>
         <p>{text}</p>
         <Cross/>

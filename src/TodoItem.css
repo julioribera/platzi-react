@@ -12,14 +12,25 @@ li {
 
 li p {
     flex-grow: 1;
-    margin: 0 10px; /* Espacio alrededor del texto */
+    margin: 0 10px;
 }
 
-li > :first-child {
-    /* Estilos para el componente Check (si es necesario) */
+li.completed p {
+    text-decoration: line-through;
+    font-style: italic;
 }
 
-.cross-container {
-    align-self: flex-start;
-    margin-left: auto; /* Empuja la cruz a la derecha */
+.check:hover {
+    cursor: pointer;
+    color: #00b200;
 }
+
+li.completed .check {
+    color: #00b200;
+}
+
+.cross:hover{
+    cursor: pointer;
+    color: red;
+}
+
