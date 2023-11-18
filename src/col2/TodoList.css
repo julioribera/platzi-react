@@ -1,0 +1,28 @@
+ul {
+    padding: 0 5px;
+    max-height: 440px;
+    overflow-y: auto; /* Desplazamiento solo vertical */
+  }
+  
+  /* Estilo para la barra de desplazamiento */
+  ul::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  /* Estilo para la pista (track) de la barra de desplazamiento */
+  ul::-webkit-scrollbar-track {
+    background: none; /* Color de fondo de la pista */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  /* Estilo para el pulgar (thumb) de la barra de desplazamiento */
+  ul::-webkit-scrollbar-thumb {
+    background: #888; /* Color del pulgar */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  /* Cambio de color al pasar el mouse sobre el pulgar */
+  ul::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color más oscuro al pasar el mouse */
+  }
+  
