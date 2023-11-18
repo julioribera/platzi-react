@@ -3,7 +3,7 @@ import "./Column1.css";
 import {TodoSearch} from "./TodoSearch";
 import {CreateTodoButton} from "./CreateTodoButton";
 
-function Column1({searchValue, setSearchValue, todos, setTodos}) {
+function Column1({searchValue, setSearchValue, todos, saveTodos}) {
   const [inputValue, setInputValue] = React.useState("");
 
   const addTodo = (text) => {
@@ -11,9 +11,8 @@ function Column1({searchValue, setSearchValue, todos, setTodos}) {
       return;
     }
     const newTodos = [{text, completed: false}, ...todos];
-    setTodos(newTodos);
+    saveTodos(newTodos);
     setInputValue("");
-    localStorage.setItem("todos", JSON.stringify(newTodos));
   };
 
   const handleInputChange = (e) => {
@@ -35,7 +34,7 @@ function Column1({searchValue, setSearchValue, todos, setTodos}) {
           placeholder="Escribe una tarea"
           value={inputValue}
           onChange={handleInputChange}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyPress}
         />
         <CreateTodoButton
           addTodo={() => {

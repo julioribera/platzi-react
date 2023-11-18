@@ -60,12 +60,11 @@ h4 {
   min-height: 500px;
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0px 0px 35px rgba(4, 17, 71, 0.15);
-  background-image: url("./img/TodoApp.png");
+  background-image: url("../img/TodoApp.png");
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center calc(100% - 10px);
 }
-
 
 @media (max-width: 768px) {
   .container {

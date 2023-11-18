@@ -3,21 +3,25 @@ import {TodoCounter} from "./TodoCounter";
 import {TodoList} from "./TodoList";
 import {TodoItem} from "./TodoItem";
 
-function Column2({todos, setTodos, searchedTodos, completedTodos, totalTodos}) {
+function Column2({
+  todos,
+  saveTodos,
+  searchedTodos,
+  completedTodos,
+  totalTodos,
+}) {
   const todoCompleted = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
-    setTodos(newTodos);
-    localStorage.setItem("todos", JSON.stringify(newTodos));
+    saveTodos(newTodos);
   };
 
   const todoDeleted = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
-    localStorage.setItem("todos", JSON.stringify(newTodos));
+    saveTodos(newTodos);
   };
 
   return (
