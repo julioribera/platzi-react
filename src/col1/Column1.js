@@ -13,6 +13,7 @@ function Column1({searchValue, setSearchValue, todos, setTodos}) {
     const newTodos = [{text, completed: false}, ...todos];
     setTodos(newTodos);
     setInputValue("");
+    localStorage.setItem("todos", JSON.stringify(newTodos));
   };
 
   const handleInputChange = (e) => {
