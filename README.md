@@ -1,7 +1,10 @@
 # Mi primera App en React
 
-Preview:
+## Descripción:
+Aplicación en React en la que puedes crear, completar, eliminar y filtrar tareas.
 
+## Preview:
+[![PREVISUALIZAR APP]][https://julioribera.github.io/platzi-react/]
 ![Preview de la App](https://github.com/julioribera/platzi-react/blob/main/AppPreview.png?raw=true)
 
 
