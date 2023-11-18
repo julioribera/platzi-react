@@ -21,6 +21,11 @@ li.completed {
   border-color: #00b200;
 }
 
+li.completed:hover {
+  background-color: rgba(228, 228, 228, 0.8);
+  border-color: #007bff;
+}
+
 li p {
   flex-grow: 1;
   margin: 0 10px;

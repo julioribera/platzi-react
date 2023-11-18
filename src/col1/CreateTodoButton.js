@@ -1,5 +1,7 @@
-function CreateTodoButton() {
-  return <button onClick={(event) => console.log(event)}>+</button>;
+function CreateTodoButton({
+  addTodo
+}) {
+  return <button onClick={addTodo}>+</button>;
 }
 
 export {CreateTodoButton};

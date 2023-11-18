@@ -3,26 +3,46 @@ import { TodoCounter } from './TodoCounter';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 
-const defaultTodos = [
-    { text: 'Cortar cebolla', completed: true },
-    { text: 'Tomar el curso de intro a React', completed: false },
-    { text: 'Llorar con la llorona', completed: false },
-    { text: 'LALALALA', completed: true },
-    { text: 'Hacer la cena', completed: false }
-  ];
 
-function Column2() {
+function Column2({
+    todos,
+    setTodos,
+    searchedTodos,
+    completedTodos,
+    totalTodos
+}) {
+
+    const todoCompleted = (text) => {
+        const todoIndex = todos.findIndex(todo => todo.text === text);
+        const newTodos = [...todos];
+        newTodos[todoIndex].completed = true;
+        setTodos(newTodos);
+    }
+
+    const todoDeleted = (text) => {
+        const todoIndex = todos.findIndex(todo => todo.text === text);
+        const newTodos = [...todos];
+        newTodos.splice(todoIndex, 1);
+        setTodos(newTodos);
+    }
+
+
     return (
         <div class="column">
             <h1 className='gradient-text'>Tus tareas</h1>
-            <TodoCounter total={7} completed={3} />
+            <TodoCounter
+                total={totalTodos}
+                completed={completedTodos}
+            />
             
             <TodoList>
-                {defaultTodos.map(todo => (
+                {searchedTodos.map(todo => (
                 <TodoItem
                     key={todo.text}
                     text={todo.text}
                     completed={todo.completed}
+                    onComplete={() => todoCompleted(todo.text)}
+                    onDelete={() => todoDeleted(todo.text)}
                 />
                 ))}
             </TodoList>

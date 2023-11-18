@@ -2,12 +2,21 @@ import './TodoItem.css';
 import { Check } from './Check';
 import { Cross } from './Cross';
 
-function TodoItem({text, completed}){
+function TodoItem({
+  text,
+  completed,
+  onComplete,
+  onDelete
+}){
     return (
       <li className={completed ? 'completed' : ''}>
-        <Check/>
+        <Check
+          onClick={onComplete}
+        />
         <p>{text}</p>
-        <Cross/>
+        <Cross
+          onClick={onDelete}
+        />
       </li>
     )
   }

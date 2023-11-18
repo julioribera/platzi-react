@@ -1,7 +1,10 @@
 import React from "react";
 
-function TodoSearch() {
-  const [searchValue, setSearchValue] = React.useState("");
+function TodoSearch({
+  searchValue,
+  setSearchValue
+}) {
+
 
   return (
     <input
@@ -9,7 +12,6 @@ function TodoSearch() {
       value={searchValue}
       onChange={(event) => {
         setSearchValue(event.target.value);
-        console.log(searchValue);
       }}
     />
   );
