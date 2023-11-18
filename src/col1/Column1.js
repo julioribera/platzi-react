@@ -3,23 +3,16 @@ import "./Column1.css";
 import {TodoSearch} from "./TodoSearch";
 import {CreateTodoButton} from "./CreateTodoButton";
 
-function Column1({
-  searchValue,
-  setSearchValue,
-  todos,
-  setTodos
-}) {
-
+function Column1({searchValue, setSearchValue, todos, setTodos}) {
   const [inputValue, setInputValue] = React.useState("");
 
   const addTodo = (text) => {
     if (text === "") {
       return;
     }
-    const newTodos = [...todos, {text, completed: false}];
+    const newTodos = [{text, completed: false}, ...todos];
     setTodos(newTodos);
-    setInputValue('');
-    console.log("addTodo");
+    setInputValue("");
   };
 
   const handleInputChange = (e) => {
@@ -27,12 +20,10 @@ function Column1({
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       addTodo(inputValue);
     }
   };
-
-
 
   return (
     <div class="column">
@@ -45,13 +36,15 @@ function Column1({
           onChange={handleInputChange}
           onKeyPress={handleKeyPress}
         />
-        <CreateTodoButton 
-          addTodo={() => {addTodo(inputValue)}}
+        <CreateTodoButton
+          addTodo={() => {
+            addTodo(inputValue);
+          }}
         />
       </div>
       <h2>Filtra tareas</h2>
       <div className="input-container">
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
+        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
     </div>
   );
