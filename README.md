@@ -2,7 +2,7 @@
 
 Preview:
 
-![alt text](https://github.com/julioribera/platzi-react/blob/main/AppPreview.png?raw=true)
+![Preview de la App](https://github.com/julioribera/platzi-react/blob/main/AppPreview.png?raw=true)
 
 
 ### Ayuda - WSL:
