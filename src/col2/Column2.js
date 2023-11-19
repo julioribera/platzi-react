@@ -9,6 +9,8 @@ function Column2({
   searchedTodos,
   completedTodos,
   totalTodos,
+  loading,
+  error,
 }) {
   const todoCompleted = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
@@ -27,18 +29,25 @@ function Column2({
   return (
     <div class="column">
       <h1 className="gradient-text">Tus tareas</h1>
-      <TodoCounter total={totalTodos} completed={completedTodos} />
+      <TodoCounter
+        loading={loading}
+        error={error}
+        total={totalTodos}
+        completed={completedTodos}
+      />
 
       <TodoList>
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => todoCompleted(todo.text)}
-            onDelete={() => todoDeleted(todo.text)}
-          />
-        ))}
+        {!loading &&
+          !error &&
+          searchedTodos.map((todo) => (
+            <TodoItem
+              key={todo.text}
+              text={todo.text}
+              completed={todo.completed}
+              onComplete={() => todoCompleted(todo.text)}
+              onDelete={() => todoDeleted(todo.text)}
+            />
+          ))}
       </TodoList>
     </div>
   );

@@ -5,7 +5,12 @@ import {Column2} from "../col2/Column2";
 import {useLocalStorage} from "./useLocalStorage";
 
 function App() {
-  const [todos, saveTodos] = useLocalStorage("todos", []);
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading,
+    error,
+  } = useLocalStorage("todos", []);
   const [searchValue, setSearchValue] = React.useState("");
   const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
@@ -22,6 +27,8 @@ function App() {
         setSearchValue={setSearchValue}
       />
       <Column2
+        loading={loading}
+        error={error}
         todos={todos}
         saveTodos={saveTodos}
         searchedTodos={searchedTodos}
