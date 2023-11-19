@@ -2,6 +2,7 @@ import "./Column2.css";
 import {TodoCounter} from "./TodoCounter";
 import {TodoList} from "./TodoList";
 import {TodoItem} from "./TodoItem";
+import {LoadingSkeleton} from "./LoadingSkeleton";
 
 function Column2({
   todos,
@@ -37,8 +38,11 @@ function Column2({
       />
 
       <TodoList>
-        {!loading &&
-          !error &&
+        {loading ? (
+          <LoadingSkeleton />
+        ) : error ? (
+          <p>Hubo un error</p>
+        ) : (
           searchedTodos.map((todo) => (
             <TodoItem
               key={todo.text}
@@ -47,7 +51,8 @@ function Column2({
               onComplete={() => todoCompleted(todo.text)}
               onDelete={() => todoDeleted(todo.text)}
             />
-          ))}
+          ))
+        )}
       </TodoList>
     </div>
   );
