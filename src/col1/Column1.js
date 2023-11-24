@@ -1,53 +1,48 @@
 import React from "react";
 import "./Column1.css";
-import {TodoSearch} from "./TodoSearch";
-import {CreateTodoButton} from "./CreateTodoButton";
+import { TodoSearch } from "./TodoSearch";
+import { CreateTodoButton } from "./CreateTodoButton";
+import { TodoContext } from "../TodoContext";
 
-function Column1({searchValue, setSearchValue, todos, saveTodos}) {
-  const [inputValue, setInputValue] = React.useState("");
-
-  const addTodo = (text) => {
-    if (text === "") {
-      return;
-    }
-    const newTodos = [{text, completed: false}, ...todos];
-    saveTodos(newTodos);
-    setInputValue("");
-  };
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      addTodo(inputValue);
-    }
-  };
-
+function Column1() {
   return (
     <div class="column">
       <h2>Crea una tarea</h2>
       <div className="input-container">
-        <input
-          type="text"
-          placeholder="Escribe una tarea"
-          value={inputValue}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyPress}
-        />
-        <CreateTodoButton
-          addTodo={() => {
-            addTodo(inputValue);
-          }}
-        />
+        <TodoContext.Consumer>
+          {({ inputValue, handleInputChange, handleKeyPress }) => (
+            <input
+              type="text"
+              placeholder="Escribe una tarea"
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyPress}
+            />
+          )}
+        </TodoContext.Consumer>
+        <TodoContext.Consumer>
+          {({ addTodo, inputValue }) => (
+            <CreateTodoButton
+              addTodo={() => {
+                addTodo(inputValue);
+              }}
+            />
+          )}
+        </TodoContext.Consumer>
       </div>
       <h2>Filtra tareas</h2>
       <div className="input-container">
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+        <TodoContext.Consumer>
+          {({ searchValue, setSearchValue }) => (
+            <TodoSearch
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+            />
+          )}
+        </TodoContext.Consumer>
       </div>
     </div>
   );
 }
 
-export {Column1};
+export { Column1 };
