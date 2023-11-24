@@ -20,15 +20,10 @@ function Column1() {
             />
           )}
         </TodoContext.Consumer>
-        <TodoContext.Consumer>
-          {({ addTodo, inputValue }) => (
-            <CreateTodoButton
-              addTodo={() => {
-                addTodo(inputValue);
-              }}
-            />
-          )}
-        </TodoContext.Consumer>
+
+        <CreateTodoButton
+        // Usando contexto desde useContext
+        />
       </div>
       <h2>Filtra tareas</h2>
       <div className="input-container">

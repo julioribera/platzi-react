@@ -1,4 +1,15 @@
-function TodoCounter({total, completed, loading, error}) {
+import React from "react";
+import { TodoContext } from "../TodoContext";
+
+function TodoCounter() {
+  // Usando contexto desde useContext
+  const {
+    loading,
+    error,
+    totalTodos: total,
+    completedTodos: completed,
+  } = React.useContext(TodoContext);
+
   return loading ? (
     <h4>Cargando...</h4>
   ) : error ? (
@@ -12,4 +23,4 @@ function TodoCounter({total, completed, loading, error}) {
   );
 }
 
-export {TodoCounter};
+export { TodoCounter };

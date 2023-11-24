@@ -1,7 +1,18 @@
-function CreateTodoButton({
-  addTodo
-}) {
-  return <button onClick={addTodo}>+</button>;
+import React from "react";
+import { TodoContext } from "../TodoContext";
+
+function CreateTodoButton() {
+  const { addTodo, inputValue } = React.useContext(TodoContext);
+
+  return (
+    <button
+      onClick={() => {
+        addTodo(inputValue);
+      }}
+    >
+      +
+    </button>
+  );
 }
 
-export {CreateTodoButton};
+export { CreateTodoButton };

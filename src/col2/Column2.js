@@ -9,16 +9,10 @@ function Column2() {
   return (
     <div class="column">
       <h1 className="gradient-text">Tus tareas</h1>
-      <TodoContext.Consumer>
-        {({ loading, error, totalTodos, completedTodos }) => (
-          <TodoCounter
-            loading={loading}
-            error={error}
-            total={totalTodos}
-            completed={completedTodos}
-          />
-        )}
-      </TodoContext.Consumer>
+
+      <TodoCounter
+      // Usando contexto desde useContext
+      />
 
       <TodoContext.Consumer>
         {({ loading, error, searchedTodos, todoCompleted, todoDeleted }) => (
